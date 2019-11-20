@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Person List</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+
+</head>
+<body>
+
+
+<h1 class="text-center" >Vehicles List</h1>
+<a th:href="@{/vehicles/new}">Add Vehicle</a>
+<br/><br/>
+<div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Type</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each ="vehicle : ${vehicles}">
+            <th scope="row"th:utext="${vehicle.id}"></th>
+            <td th:utext="${vehicle.brand}">...</td>
+            <td th:utext="${vehicle.type}">...</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+</body>
+</html>

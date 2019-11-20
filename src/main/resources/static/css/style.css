@@ -1,0 +1,15 @@
+h1 {
+    color:#6b6b6e;
+}
+
+h2 {
+    color:#6b6b6e;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 5px;
+}

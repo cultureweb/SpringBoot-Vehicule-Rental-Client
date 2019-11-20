@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Add Vehicule</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h1>Create a Vehicule:</h1>
+
+<!--
+In Thymeleaf the equivalent of
+JSP's ${pageContext.request.contextPath}/edit.html
+would be @{/edit.html}
+-->
+<div class="container">
+<form class="form-group" action="#" th:action="@{/vehicles/new}" th:object="${vehicleForm}" method="POST">
+    <div class="form-group">
+
+
+        <label for="brand">Brand name:</label>
+        <input type="text" class="form-control" id="brand" th:field="*{brand}"
+               placeholder="Enter brand"/>
+        <div class="alert mt-2 alert-warning alert-dismissible fade show" role="alert" th:if="${#fields.hasErrors('brand')}" th:errors="*{brand}"></div>
+
+</div>
+    <div class="form-group">
+
+        <label for="type">Model name:</label>
+        <input type="text" class="form-control" id="type" th:field="*{type}"
+               placeholder="Enter Model"/>
+        <div class="alert mt-2 alert-warning alert-dismissible fade show" role="alert" th:if="${#fields.hasErrors('type')}" th:errors="*{type}"></div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+</div>
+
+<!-- <div th:if="${errorMessage}" th:utext="${errorMessage}"
+ style="color:red;font-style:italic;">
+...
+</div> -->
+</body>
+</html>
